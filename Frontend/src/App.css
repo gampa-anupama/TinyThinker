@@ -1,0 +1,437 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f0f0;
+  color: #222;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+/* Left Pane (Upload + PDF Preview) */
+.left-pane {
+  flex: 1;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-box {
+  border: 2px dashed #ccc;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #fafafa;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.upload-box:hover {
+  background-color: #f0f8ff;
+}
+
+.filename {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.pdf-preview {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+/* Right Pane (Chat Window) */
+.right-pane {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-bubble-group {
+  margin-bottom: 20px;
+}
+
+.user-bubble,
+.bot-bubble {
+  padding: 12px 16px;
+  margin: 6px 0;
+  max-width: 80%;
+  border-radius: 15px;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-bubble {
+  background-color: #e0f7fa;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+  color: #004d40;
+}
+
+.bot-bubble {
+  background-color: #e8eaf6;
+  align-self: flex-start;
+  margin-right: auto;
+  color: #1a237e;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+}
+
+textarea {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  border: 1px solid #ccc;
+  height: 60px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.theme-toggle {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+/* ===== Dark Theme Styles ===== */
+
+.dark-theme body {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.dark-theme .container {
+  background-color: #1e1e1e;
+}
+
+.dark-theme .left-pane {
+  background: #2c2c2c;
+  box-shadow: 2px 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .upload-box {
+  background: #333;
+  border-color: #555;
+  color: #ddd;
+}
+
+.dark-theme .upload-box:hover {
+  background-color: #444a5a;
+}
+
+.dark-theme .filename {
+  color: #bbb;
+}
+
+.dark-theme .pdf-preview {
+  border-color: #555;
+}
+
+.dark-theme .right-pane {
+  background: #252525;
+}
+
+.dark-theme .user-bubble {
+  background-color: #004d40cc; /* dark teal with transparency */
+  color: #a7ffeb;
+}
+
+.dark-theme .bot-bubble {
+  background-color: #1a237ecc; /* dark indigo with transparency */
+  color: #bbdefbcc;
+}
+
+.dark-theme textarea {
+  background-color: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+.dark-theme button {
+  background-color: #388e3c;
+}
+
+.dark-theme button:disabled {
+  background-color: #5a8a58;
+  cursor: not-allowed;
+}
+
+.dark-theme .theme-toggle {
+  background: #666;
+  color: #eee;
+}
+
+/* Basic layout */
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.left-pane {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--bg-light, #f9f9f9);
+  color: var(--text-dark, #222);
+  min-width: 250px; /* Make sure it's wide enough */
+}
+
+.right-pane {
+  flex: 2;
+  padding: 20px;
+}
+
+/* This is the magic to keep text and toggle inline */
+.toggle-inline {
+  display: flex;
+  align-items: center;   /* vertically center */
+  gap: 10px;             /* space between text and toggle */
+  margin-bottom: 20px;
+  user-select: none;
+  white-space: nowrap;   /* prevent wrapping */
+}
+
+/* Text styling */
+.toggle-text {
+  font-size: 16px;
+}
+
+/* Switch toggle styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #ccc;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Dark mode body background */
+.dark-theme {
+  --bg-light: #222;
+  --text-dark: #eee;
+  background-color: #222;
+  color: #eee;
+}
+
+
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.app {
+  text-align: center;
+}
+
+/* === Banner scroll === */
+.feature-scroll {
+  background: #0f62fe;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  animation: scroll-banner 20s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes scroll-banner {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* === Hero === */
+.hero-section {
+  padding: 60px 20px;
+  background: white;
+}
+
+.main-title {
+  font-size: 3rem;
+  color: #0f62fe;
+  margin: 20px 0;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.cta-button {
+  background-color: #0f62fe;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #0949b6;
+}
+
+/* === Netflix-style slider === */
+.netflix-slider-section {
+  background-color: #e3f2fd;
+  padding: 50px 20px;
+  overflow: hidden;
+}
+
+.slider-title {
+  font-size: 2rem;
+  color: #0d47a1;
+  margin-bottom: 30px;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  animation: slide 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.slider-card {
+  min-width: 250px;
+  max-width: 250px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: left;
+  flex: 0 0 auto;
+}
+
+.slider-card h3 {
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.slider-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* === Footer === */
+.footer {
+  background: #0f62fe;
+  color: white;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .slider-card {
+    min-width: 70%;
+  }
+
+  .main-title {
+    font-size: 2.2rem;
+  }
+}

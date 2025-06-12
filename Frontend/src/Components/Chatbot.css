@@ -1,0 +1,111 @@
+/* chatbot.css */
+
+.right-pane {
+  flex: 2; /* Take 2 parts */
+  min-width: 400px; /* Optional */
+  padding: 20px;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-bubble-group {
+  margin-bottom: 20px;
+}
+
+.user-bubble,
+.bot-bubble {
+  padding: 12px 16px;
+  margin: 6px 0;
+  max-width: 80%;
+  border-radius: 15px;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-bubble {
+  background-color: #e0f7fa;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+  color: #004d40;
+}
+
+.bot-bubble {
+  background-color: #e8eaf6;
+  align-self: flex-start;
+  margin-right: auto;
+  color: #1a237e;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+}
+
+textarea {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  border: 1px solid #ccc;
+  height: 60px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+/* Dark theme chatbot pane */
+
+.dark-theme .right-pane {
+  background: #252525;
+}
+
+.dark-theme .user-bubble {
+  background-color: #004d40cc; /* dark teal with transparency */
+  color: #a7ffeb;
+}
+
+.dark-theme .bot-bubble {
+  background-color: #1a237ecc; /* dark indigo with transparency */
+  color: #bbdefbcc;
+}
+
+.dark-theme textarea {
+  background-color: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+.dark-theme button {
+  background-color: #388e3c;
+}
+
+.dark-theme button:disabled {
+  background-color: #5a8a58;
+  cursor: not-allowed;
+}
