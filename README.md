@@ -1,128 +1,146 @@
-### TinyThinker – AI-Powered PDF Q&A Chatbot
-TinyThinker is an AI-powered chatbot application designed to answer questions based on the content of uploaded PDF documents. The project features a modern, interactive frontend built with React and a Node.js-Flask hybrid backend that utilizes a lightweight LLM (TinyLlama via Ollama) for contextual response generation.
+# TinyThinker – AI-Powered PDF Q&A Chatbot
 
-# Project Structure
-pgsql
-Copy
-Edit
+TinyThinker is an AI-powered chatbot that allows users to upload PDF files and ask questions based on the content within. It uses a modern React frontend, a Node.js backend for handling requests and integrating with a lightweight LLM, and a Flask-based PDF parser for extracting text from documents.
+
+---
+
+##  Project Structure
+
 TinyThinker/
-├── frontend/           # React app (user interface)
-├── server/             # Node.js server handling user requests and LLM calls
-├── pdf-parser/         # Flask API for PDF processing and text extraction
-│   └── temp/           # Temporary folder to store uploaded PDF files
+├── frontend/ # React app for user interface
+├── server/ # Node.js server to handle user requests and communicate with LLM
+├── pdf-parser/ # Flask app to parse PDFs and return text
+│ └── temp/ # Temporary folder to store uploaded PDFs
 
-# Features
-Upload a .pdf file and get context-aware answers from the document.
-
-Seamless chat-like UI similar to ChatGPT.
-
-Light and dark mode toggle.
-
-Modern UI with responsive design.
-
-No cloud storage – secure on-device processing.
-
-Easy to extend with document memory and better chunking methods.
-
-# Getting Started
-1. Clone the Repository
-bash
+yaml
 Copy
 Edit
-# git clone https://github.com/gampa-anupama/TinyThinker.git
+
+---
+
+##  Features
+
+- Upload PDF documents and receive contextual answers.
+- Real-time chat interface.
+- Dark mode and light mode toggle.
+- React-based modern UI.
+- No cloud storage: everything processes locally.
+- Extendable and modular design.
+
+---
+
+##  Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/TinyThinker.git
 cd TinyThinker
-2. Install Frontend Dependencies
+   Installation & Setup
+➤ Frontend Setup (React)
 bash
 Copy
 Edit
 cd frontend
-npm install
-npm start
-This will start the React development server on http://localhost:3000.
-
-3. Start the Node.js Backend
+npm install        # Install dependencies
+npm start          # Starts on http://localhost:3000
+➤ Backend Setup (Node.js Server)
 bash
 Copy
 Edit
 cd ../server
-npm install
-node index.js
-This will run the Node server on http://localhost:5000.
-
-4. Run the Flask PDF Parser
+npm install        # Install dependencies
+node index.js      # Starts on http://localhost:5000
+➤ PDF Parser Setup (Flask)
 bash
 Copy
 Edit
 cd ../pdf-parser
 pip install flask pymupdf
-python app.py
-This will start the PDF parsing server at http://localhost:5001.
-
-5. Make Sure Ollama is Running Locally
-Ensure you have Ollama installed and running:
+python app.py      # Starts on http://localhost:5001
+➤ Running TinyLlama with Ollama
+Make sure Ollama is installed and running locally:
 
 bash
 Copy
 Edit
 ollama run tinyllama
+  Tech Stack
+➤ Frontend (React)
+ReactJS: SPA framework
 
-# Frontend Tech Stack
-ReactJS: SPA with component-based structure
+Axios: API communication
 
-Axios: For API integration
+React-PDF: Preview PDF content
 
-React PDF: Display PDF previews
+Tailwind CSS: Styling
 
-Framer Motion & Tailwind CSS: Smooth UI animations and styling
+Framer Motion: UI Animations
 
-React Router: Page navigation
+React Router: Routing
 
-Dark Mode Toggle: Light/Dark theme switch
+➤ Backend (Node.js)
+Express: Server framework
 
-# Backend Tech Stack
-Node.js Server
-Express.js: Web framework
+Multer: File uploads
 
-Multer: For handling file uploads
+Axios: Inter-service API calls
 
-Axios: For communicating with Flask and Ollama APIs
+CORS: Enable cross-origin requests
 
-CORS: Cross-origin support
+➤ PDF Parser (Flask)
+Flask: Web server for parsing
 
-Python Flask API
-Flask: Lightweight Python web framework
+PyMuPDF (fitz): Extract text from PDF pages
 
-PyMuPDF: To extract text from PDF files
+🗂 Dependencies
+➤ Frontend (frontend/package.json)
+json
+Copy
+Edit
+{
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "axios": "^1.9.0",
+    "react-pdf": "^9.2.1",
+    "tailwindcss": "^4.1.7",
+    "react-router-dom": "^7.6.1",
+    "framer-motion": "^12.15.0"
+  }
+}
+➤ Backend (server/package.json)
+json
+Copy
+Edit
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "axios": "^1.9.0",
+    "multer": "^1.4.5-lts.2",
+    "express-fileupload": "^1.5.1"
+  }
+}
+ Future Enhancements
+Vector search using FAISS or ChromaDB
 
-# Notes
-All uploaded PDFs are stored temporarily in the pdf-parser/temp/ folder.
+LangChain integration for better context handling
 
-Make sure all three services (frontend, server, and pdf-parser) are running simultaneously.
+Support for multi-document chat
 
-Modify port numbers in .env files or directly in code if ports conflict.
+Session memory to hold context
 
-# Future Enhancements
-Chat memory and long context handling
+Full Docker containerization and deployment on Render/Azure
 
-Multi-document support
+ Security
+Uploaded PDFs are not stored permanently.
 
-Deployment on platforms like Azure or Render
+Files are stored temporarily in pdf-parser/temp and deleted afterward (recommended).
 
-Embedding and vector search using FAISS or ChromaDB
+No external cloud API is used to store personal data.
 
-Integration with LangChain for advanced prompt handling
-
-# Contributing
-Feel free to fork the repository and submit pull requests to improve or extend the functionality.
-
-
-
-
-
-
-
-
-
-Tools
-
+ Contribution
+Feel free to fork, improve, or extend the functionality by submitting a pull request.
 
