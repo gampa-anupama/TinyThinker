@@ -106,10 +106,6 @@ Make sure Python 3 and pip are installed on your system.
 # Author
 Developed by Anupama G
 
-yaml
-Copy
-Edit
-
 ---
 
 
