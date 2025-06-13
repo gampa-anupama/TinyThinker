@@ -77,40 +77,26 @@ Ensure Python 3 and pip are installed on your system.
 Dependencies
 Frontend
 react
-
 react-router-dom
-
 axios
-
 react-pdf
-
 framer-motion
-
-tailwindcss
-
 react-icons
-
 react-slick
-
 slick-carousel
-
 swiper
 
 Backend
 express
-
 axios
-
 cors
-
 multer
-
 express-fileupload
-
 PDF Parser (Python)
-flask
 
+flask
 pymupdf (fitz)
+
 
 How It Works
 User uploads a PDF via the frontend
@@ -134,11 +120,6 @@ Edit
 
 ---
 
-Let me know if you'd like me to generate this as a downloadable `.md` file or add optional sections like demo screenshots, deployment instructions, or contribution guidelines.
+You can now **copy-paste this directly** into your `README.md` and GitHub will render it perfectly — no unwanted code blocks around text.
 
-
-
-
-
-
-
+Would you like me to generate a downloadable `.md` file too?
