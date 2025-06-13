@@ -9,7 +9,9 @@ It integrates:
 
 ---
 
-## 📁 Project Structure
+---
+
+##  Project Structure
 
 TinyThinker/
 ├── frontend/ # React app for the user interface
@@ -31,11 +33,11 @@ yaml
 Copy
 Edit
 
-<!-- 👆 This closing backtick ends the code block for folder structure -->
+<!--  This closing backtick ends the code block for folder structure -->
 
 ---
 
-## ✅ Features
+##  Features
 
 - Upload PDF files and ask questions about their contents  
 - Real-time chat-based interface  
@@ -46,13 +48,14 @@ Edit
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the Repository
 
 
 git clone https://github.com/your-username/TinyThinker.git
 cd TinyThinker
+
 2. Frontend Setup (React)
 bash
 Copy
@@ -60,14 +63,16 @@ Edit
 cd frontend
 npm install
 npm start
-3. Backend Setup (Node.js)
+
+4. Backend Setup (Node.js)
 bash
 Copy
 Edit
 cd ../server
 npm install
 node index.js
-4. PDF Parser Setup (Flask)
+
+6. PDF Parser Setup (Flask)
 bash
 Copy
 Edit
@@ -76,58 +81,42 @@ pip install flask pymupdf
 python app.py
 Make sure Python 3 and pip are installed on your system.
 
-📦 Dependencies
+# Dependencies
 Frontend
 react
-
 react-router-dom
-
 axios
-
 react-pdf
-
 framer-motion
-
 tailwindcss
-
 react-icons
-
 react-slick
-
 slick-carousel
-
 swiper
 
 Backend
 express
-
 axios
-
 cors
-
 multer
-
 express-fileupload
-
 PDF Parser (Python)
-flask
 
+flask
 pymupdf (fitz)
 
-🧠 How It Works
+
+# How It Works
 User uploads a PDF via the frontend
-
 The PDF is sent to the Flask parser, which extracts raw text
-
 The Node.js backend formats the prompt using the text and sends it to an LLM (e.g., TinyLlama)
-
 The response is returned and displayed in the chat interface
 
-📄 License
+# License
 This project is licensed under the MIT License.
 Feel free to use and modify it as needed.
 
-👤 Author
+# Author
 Developed by Anupama G
 
 yaml
@@ -135,15 +124,6 @@ Copy
 Edit
 
 ---
-
-### ✅ Summary of Fix
-
-- Your issue was because the **folder structure block (` ``` `)** was **never closed**.
-- Now it ends right after the folder tree.
-- All other sections are regular markdown text — no longer inside the code block.
-
-Would you like me to save this to a `README.md` file and send it for download?
-
 
 
 
