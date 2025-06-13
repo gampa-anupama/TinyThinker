@@ -1,16 +1,30 @@
 # TinyThinker – AI-Powered PDF Q&A Chatbot
 
-**TinyThinker** is an AI-powered chatbot that enables users to upload PDF files and ask questions related to the document content. It uses a modern React frontend, a Node.js backend to handle user requests and interface with the LLM, and a Flask-based microservice to extract text from PDFs.
+**TinyThinker** is an AI-powered chatbot that allows users to upload PDF documents and ask questions based on their content.  
+It integrates:
+- A modern **React** frontend for the user interface  
+- A **Node.js** backend for request handling and LLM communication  
+- A lightweight **Flask** microservice to parse PDF files and extract text
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 TinyThinker/
 ├── frontend/ # React app for the user interface
-├── server/ # Node.js server to handle API requests and communicate with LLM
-├── pdf-parser/ # Flask app to extract text from uploaded PDFs
-│ └── temp/ # Temporary folder to store uploaded PDF files
+│ ├── public/
+│ └── src/
+│ ├── components/ # Reusable UI components
+│ └── App.js # Main application file
+│
+├── server/ # Node.js server for handling API requests
+│ └── index.js # Entry point for server logic
+│
+├── pdf-parser/ # Flask service to extract text from PDFs
+│ ├── app.py # Main Flask application
+│ └── temp/ # Temporary storage for uploaded PDFs
+│
+└── README.md # Project overview and setup instructions
 
 yaml
 Copy
@@ -18,91 +32,89 @@ Edit
 
 ---
 
-## 🚀 Features
+##  Features
 
-- Upload PDF documents and receive context-based answers.
-- Real-time chat experience.
-- Light/Dark mode toggle.
-- Fully responsive, React-based modern UI.
-- No cloud storage — all processes run locally.
-- Modular and extendable architecture.
+-  Upload PDF files and ask questions about their contents  
+-  Real-time chat-based interface  
+-  Dark mode & Light mode toggle  
+-  Clean, responsive React UI  
+-  No cloud storage — everything runs locally  
+-  Modular & easily extendable design
 
 ---
 
-## 🛠️ Getting Started
+##  Getting Started
 
-### 1. Clone the Repository
+###  Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/TinyThinker.git
 cd TinyThinker
-2. Frontend Setup (React)
+2️⃣ Frontend Setup (React)
 bash
 Copy
 Edit
 cd frontend
-npm install         # Install dependencies
-npm start           # Runs on http://localhost:3000
-3. Backend Setup (Node.js Server)
+npm install          # Install frontend dependencies
+npm start            # Starts on http://localhost:3000
+3️⃣ Backend Setup (Node.js)
 bash
 Copy
 Edit
 cd ../server
-npm install         # Install dependencies
-node index.js       # Starts server at http://localhost:5000
-4. PDF Parser Setup (Flask)
+npm install          # Install backend dependencies
+node index.js        # Starts server on http://localhost:5000
+4️⃣ PDF Parser Setup (Flask)
 bash
 Copy
 Edit
 cd ../pdf-parser
 pip install flask pymupdf
-python app.py       # Runs on http://localhost:5001
-Make sure you have Python and pip installed. This microservice extracts text from PDF files.
+python app.py        # Runs Flask server on http://localhost:5001
+Ensure Python 3 and pip are installed on your system.
 
-📦 Dependencies
+# Dependencies
 Frontend
-React 19
+react
+react-router-dom
+axios
+react-pdf
+framer-motion
+tailwindcss
+react-icons
+react-slick, slick-carousel
+swiper
 
-React Router DOM
-
-Axios
-
-React Icons
-
-React PDF
-
-TailwindCSS
-
-Framer Motion
-
-Swiper.js
-
-React Slick
 
 Backend
-Express.js
-
-Axios
-
-Multer
-
-CORS
-
-Form-Data
-
+express
+axios
+cors
+multer
 express-fileupload
+PDF Parser (Python)
 
-PDF Parser
-Flask
 
+flask
 PyMuPDF (fitz)
 
-📝 How it Works
-User uploads a PDF and types a question.
+```bash
 
-The PDF is sent to the Flask API (/process) which returns extracted text.
+ How It Works
+User uploads a PDF via the frontend.
+PDF is sent to the Flask parser, which extracts the raw text.
+Node.js backend formats the prompt using the text and forwards it to an LLM (e.g., TinyLlama).
+LLM response is returned and displayed in the chat interface.
 
-Node.js server composes a prompt with the context and sends it to TinyLlama (or another LLM).
+ License
+This project is licensed under the MIT License.
+Feel free to use and modify as needed.
 
-The response is returned and shown in the frontend UI.
+ Author
+Developed by Anupama G
 
+yaml
+Copy
+Edit
+
+---
