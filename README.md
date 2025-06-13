@@ -9,31 +9,21 @@ It integrates:
 
 ---
 
----
-
-##  Project Structure
-
-TinyThinker/
-├── frontend/ # React app for the user interface
-│ ├── public/
-│ └── src/
-│ ├── components/ # Reusable UI components
-│ └── App.js # Main application file
+# TinyThinker/
+├── frontend/             # React app for the user interface
+│   ├── public/
+│   └── src/
+│       ├── components/   # Reusable UI components
+│       └── App.js        # Main application file
 │
-├── server/ # Node.js server for handling API requests
-│ └── index.js # Entry point for server logic
+├── server/               # Node.js server for handling API requests
+│   └── index.js          # Entry point for server logic
 │
-├── pdf-parser/ # Flask service to extract text from PDFs
-│ ├── app.py # Main Flask application
-│ └── temp/ # Temporary storage for uploaded PDFs
+├── pdf-parser/           # Flask service to extract text from PDFs
+│   ├── app.py            # Main Flask application
+│   └── temp/             # Temporary storage for uploaded PDFs
 │
-└── README.md # Project overview and setup instructions
-
-yaml
-Copy
-Edit
-
-<!--  This closing backtick ends the code block for folder structure -->
+└── README.md             # Project overview and setup instructions
 
 ---
 
