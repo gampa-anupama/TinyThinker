@@ -98,7 +98,7 @@ PDF Parser (Python)
 flask
 PyMuPDF (fitz)
 
-```bash
+ ```bash
 
  How It Works
 User uploads a PDF via the frontend.
