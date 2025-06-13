@@ -51,7 +51,7 @@ TinyThinker/
 git clone https://github.com/your-username/TinyThinker.git
 cd TinyThinker
 
-2. Frontend Setup (React)
+## 2. Frontend Setup (React)
 - bash
 - Copy
 - Edit
@@ -59,16 +59,13 @@ cd TinyThinker
 - npm install
 - npm start
 
-4. Backend Setup (Node.js)
+## 3. Backend Setup (Node.js)
 
 - cd ../server
 - npm install
 - node index.js
 
-6. PDF Parser Setup (Flask)
-bash
-Copy
-Edit
+## 4. PDF Parser Setup (Flask)
 - cd ../pdf-parser
 - pip install flask pymupdf
   
@@ -76,7 +73,8 @@ python app.py
 Make sure Python 3 and pip are installed on your system.
 
 # Dependencies
-- Frontend
+
+# 1. Frontend
 - react
 - react-router-dom
 - axios
@@ -87,7 +85,7 @@ Make sure Python 3 and pip are installed on your system.
 - slick-carousel
 - swiper
 
-Backend
+# 2.Backend
 - express
 - axios
 - cors
@@ -95,7 +93,7 @@ Backend
 - express-fileupload
 - PDF Parser (Python)
 
-flask
+# 3.flask
 - pymupdf (fitz)
 
 
