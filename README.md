@@ -47,64 +47,58 @@ git clone https://github.com/your-username/TinyThinker.git
 cd TinyThinker
 
 2. Frontend Setup (React)
-bash
-Copy
-Edit
-cd frontend
-npm install
-npm start
+- bash
+- Copy
+- Edit
+- cd frontend
+- npm install
+- npm start
 
 4. Backend Setup (Node.js)
-bash
-Copy
-Edit
-cd ../server
-npm install
-node index.js
+
+- cd ../server
+- npm install
+- node index.js
 
 6. PDF Parser Setup (Flask)
 bash
 Copy
 Edit
-cd ../pdf-parser
-pip install flask pymupdf
+- cd ../pdf-parser
+- pip install flask pymupdf
+  
 python app.py
 Make sure Python 3 and pip are installed on your system.
 
 # Dependencies
-Frontend
-react
-react-router-dom
-axios
-react-pdf
-framer-motion
-tailwindcss
-react-icons
-react-slick
-slick-carousel
-swiper
+- Frontend
+- react
+- react-router-dom
+- axios
+- react-pdf
+- framer-motion
+- react-icons
+- react-slick
+- slick-carousel
+- swiper
 
 Backend
-express
-axios
-cors
-multer
-express-fileupload
-PDF Parser (Python)
+- express
+- axios
+- cors
+- multer
+- express-fileupload
+- PDF Parser (Python)
 
 flask
-pymupdf (fitz)
+- pymupdf (fitz)
 
 
 # How It Works
-User uploads a PDF via the frontend
-The PDF is sent to the Flask parser, which extracts raw text
-The Node.js backend formats the prompt using the text and sends it to an LLM (e.g., TinyLlama)
-The response is returned and displayed in the chat interface
-
-# License
-This project is licensed under the MIT License.
-Feel free to use and modify it as needed.
+- User uploads a PDF via the frontend
+- The PDF is sent to the Flask parser, which extracts raw text
+- The Node.js backend formats the prompt using the text and sends it to an LLM (e.g., TinyLlama)
+- The response is returned and displayed in the chat interface
 
 # Author
 Developed by Anupama G
