@@ -9,7 +9,7 @@ It integrates:
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 TinyThinker/
 ├── frontend/ # React app for the user interface
@@ -31,9 +31,11 @@ yaml
 Copy
 Edit
 
+<!-- 👆 This closing backtick ends the code block for folder structure -->
+
 ---
 
-## Features
+## ✅ Features
 
 - Upload PDF files and ask questions about their contents  
 - Real-time chat-based interface  
@@ -44,7 +46,7 @@ Edit
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone the Repository
 
@@ -72,33 +74,47 @@ Edit
 cd ../pdf-parser
 pip install flask pymupdf
 python app.py
-Ensure Python 3 and pip are installed on your system.
+Make sure Python 3 and pip are installed on your system.
 
-Dependencies
+📦 Dependencies
 Frontend
 react
+
 react-router-dom
+
 axios
+
 react-pdf
+
 framer-motion
+
+tailwindcss
+
 react-icons
+
 react-slick
+
 slick-carousel
+
 swiper
 
 Backend
 express
-axios
-cors
-multer
-express-fileupload
-PDF Parser (Python)
 
+axios
+
+cors
+
+multer
+
+express-fileupload
+
+PDF Parser (Python)
 flask
+
 pymupdf (fitz)
 
-
-How It Works
+🧠 How It Works
 User uploads a PDF via the frontend
 
 The PDF is sent to the Flask parser, which extracts raw text
@@ -107,11 +123,11 @@ The Node.js backend formats the prompt using the text and sends it to an LLM (e.
 
 The response is returned and displayed in the chat interface
 
-License
+📄 License
 This project is licensed under the MIT License.
 Feel free to use and modify it as needed.
 
-Author
+👤 Author
 Developed by Anupama G
 
 yaml
@@ -120,6 +136,17 @@ Edit
 
 ---
 
-You can now **copy-paste this directly** into your `README.md` and GitHub will render it perfectly — no unwanted code blocks around text.
+### ✅ Summary of Fix
 
-Would you like me to generate a downloadable `.md` file too?
+- Your issue was because the **folder structure block (` ``` `)** was **never closed**.
+- Now it ends right after the folder tree.
+- All other sections are regular markdown text — no longer inside the code block.
+
+Would you like me to save this to a `README.md` file and send it for download?
+
+
+
+
+
+
+
