@@ -50,7 +50,7 @@ Edit
 
 ### 1. Clone the Repository
 
-```bash
+
 git clone https://github.com/your-username/TinyThinker.git
 cd TinyThinker
 2. Frontend Setup (React)
