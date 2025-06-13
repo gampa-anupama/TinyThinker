@@ -11,6 +11,8 @@ It integrates:
 
 ##  Project Structure
 
+```
+
 TinyThinker/
 ├── frontend/ # React app for the user interface
 │ ├── public/
@@ -27,10 +29,7 @@ TinyThinker/
 │
 └── README.md # Project overview and setup instructions
 
-yaml
-Copy
-Edit
-
+```
 ---
 
 ##  Features
